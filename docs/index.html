@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sisters Fashion Makeup Artist</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     /* Global Reset */
     * {
@@ -14,209 +17,356 @@
       box-sizing: border-box;
     }
 
-    /* Global Background & Text Color */
+    /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      background-color: #000;
-      /* Black background */
+      background: linear-gradient(to right, #000, #3a3a3a);
+      /* Dark gradient background */
       color: #b47c47;
       /* Golden text color */
-    }
-
-    /* Containers */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    /* Banner Styling */
-    .banner {
-      background-color: #000;
-      padding: 20px 0;
       text-align: center;
+      padding: 40px 20px;
     }
 
+    h1,
+    h3,
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    /* Container */
+    .container-fluid {
+      padding: 20px;
+    }
+
+    /* Logo */
+    .logo {
+      display: block;
+      max-width: 300px;
+      margin: 0 auto 20px;
+    }
+
+    /* Banner Section */
     .banner h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       margin-bottom: 10px;
+      color: #ffd700;
     }
 
-    /* Services Section Styling */
-    .services {
-      padding: 40px 0;
-      text-align: center;
-    }
-
-    .services h2 {
-      font-size: 2em;
+    .banner h3 {
+      font-size: 1.5em;
       margin-bottom: 20px;
     }
 
-    .services ul {
-      list-style: none;
-      padding: 0;
+    .h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
     }
 
-    .services ul li {
-      font-size: 1.2em;
-      margin-bottom: 10px;
+    .banner p {
+      font-size: 1.1em;
+      color: #e4b960;
+      margin-bottom: 20px;
     }
 
-    /* Image Slider Styling */
-    .slider-container {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-      margin: 30px auto;
-      overflow: hidden;
-      border-radius: 8px;
+    /* Services Section */
+    .services {
+      padding: 60px 0;
+      background: #222;
+      /* Dark background for service section */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .slider {
-      display: flex;
-      width: 300%;
-      transition: transform 0.5s ease-in-out;
-      will-change: transform;
+    .services h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #fdd099;
     }
 
-    .slider img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-
-    .dots {
-      display: flex;
+    .service-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       justify-content: center;
-      margin-top: 10px;
     }
 
-    .dot {
-      width: 12px;
-      height: 12px;
-      margin: 5px;
-      background-color: #555;
-      border-radius: 50%;
-      display: inline-block;
+    .service-card {
+      background: white;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border: 2px solid #b47c47;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-card i {
+      font-size: 40px;
+      color: #b47c47;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .service-card:hover i {
+      color: #ffd700;
+    }
+
+    /* Button */
+    .cta-button {
+      background-color: #ffd700;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
-    .dot.active {
+    .cta-button:hover {
       background-color: #b47c47;
     }
+
+/* Enhanced Contact Details */
+.contact-details {
+  margin-top: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #222, #111);
+  color: #fff;
+  border-radius: 12px;
+  border: 2px solid #fdd099;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-details:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3);
+}
+
+/* Contact Title */
+.contact-details h3 {
+  font-size: 2.2em;
+  color: #fdd099;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Contact Items */
+.contact-details .contact-item {
+  display: flex;
+  align-items:start;
+  justify-content: start;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.contact-details .contact-item i {
+  font-size: 1.8em;
+  color: #ffd700;
+  margin-right: 15px;
+}
+
+.contact-details a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #b47c47;
+}
 
     /* Social Icons */
     .social-icons {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .social-icons a {
       color: #b47c47;
       font-size: 30px;
-      /* Increased icon size */
-      margin: 0 10px;
+      margin: 0 15px;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     .social-icons a:hover {
+      color: #ffd700;
+    }
+
+    /* Contact Item */
+    .contact-details .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+
+    .contact-details .contact-item i {
+      font-size: 1.5em;
+      color: #ffd700;
+      margin-right: 15px;
+    }
+
+    .contact-details .contact-item p {
+      margin: 0;
+    }
+
+    .contact-details a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-details a:hover {
       color: #b47c47;
     }
 
-    .logo {
-      display: block;
-      max-width: 500px;
-      margin: 0 auto 10px;
+    /* Media Query for Mobile */
+    @media (max-width: 768px) {
+      .service-container {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-button {
+        width: 100%;
+        /* Make buttons full width */
+        padding: 12px 20px;
+        /* Increase padding for better touch areas */
+        font-size: 1.1em;
+        /* Adjust font size for readability */
+        margin-bottom: 15px;
+        /* Add spacing between buttons */
+      }
+
+      .whatsapp-btn,
+      .instagram-btn {
+        display: block;
+        /* Display buttons in block format */
+        margin: 10px auto;
+        /* Center the buttons */
+      }
+
+      .banner h1 {
+        font-size: 2.5em;
+      }
+
+      .social-icons a {
+        font-size: 25px;
+      }
+
+      .mt-2 {
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Banner Section -->
-  <div class="banner">
-    <div class="container">
-      <img class="logo" src="assets\2.png"
-        alt="Sister's Fashion Logo" class="logo">
+
+  <!-- Container  Section -->
+  <div class="container">
+
+    <!-- Banner Section -->
+    <div class="banner">
+      <img class="logo" src="assets/1.png" alt="Sister's Fashion Logo">
       <h1>Ranjeetha Makeup Artist</h1>
       <h3>About Me</h3>
       <p>"I am a skilled and passionate professional makeup artist with extensive experience in bridal, fashion, and
-        party makeup. With a keen eye for detail and creativity, I specialize in enhancing natural beauty and creating
-        stunning looks tailored to every occasion."</p>
+        party makeup.
+        With a keen eye for detail and creativity, I specialize in enhancing natural beauty and creating stunning looks
+        tailored to every occasion."
+      </p>
     </div>
-  </div>
 
-  <!-- Services Section -->
-  <section class="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Hair Styling</li>
-        <li>Makeup Application</li>
-        <li>Bridal Makeup</li>
-        <li>Skincare Consultation</li>
-        <li>Special Event Makeup</li>
-      </ul>
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="service-container">
+          <div class="service-card">
+            <i class="fas fa-female"></i>
+            <h3>Bridal Makeup</h3>
+            <p>Enhance your beauty with stunning bridal makeup that complements your look perfectly.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-cut"></i>
+            <h3>Hair Styling</h3>
+            <p>Professional hair styling for all occasions, ensuring a flawless look.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Mehendi Design</h3>
+            <p>Beautiful Mehendi designs for weddings, festivals, and special occasions.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-gift"></i>
+            <h3>Saree Draping & Box Folding</h3>
+            <p>Expert saree draping techniques for elegant and graceful looks.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Flower Making</h3>
+            <p>Handcrafted floral arrangements for weddings and celebrations.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-tshirt"></i>
+            <h3>Blouse Designing & Aari Work</h3>
+            <p>Customized blouse designing and intricate Aari work for a stylish appearance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Button -->
+    <div class="text-center mt-2">
+      <!-- Call to Action Buttons -->
+      <div class="text-center mt-2">
+        <a href="https://wa.me/918610215571?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment."
+          target="_blank">
+          <button class="cta-button whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Book Now on WhatsApp
+          </button>
+        </a>&nbsp;
+        <a href="https://www.instagram.com/sisters_fashion_salem" target="_blank">
+          <button class="cta-button instagram-btn">
+            <i class="fab fa-instagram"></i> Follow & DM on Instagram
+          </button>
+        </a>
+      </div>
+      <section class="contact-details">
+        <h3>Contact Details</h3>
+        <div class="contact-item">
+          <i class="fas fa-user"></i>
+          <p>Ranjeetha . S</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <p><a href="tel:+918610215571">+91 86102 15571</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Kondalampatti, Salem-636010</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <p><a href="mailto:sistersfasionsr@gmail.com">sistersfasionsr@gmail.com</a></p>
+        </div>
+      </section>
     </div>
-    <!-- Social Icons Section -->
-  <div class="social-icons">
-    <a href="https://www.instagram.com/yourprofile" target="_blank" title="Instagram">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a>|</a>
-    <a href="https://wa.me/7094640318" target="_blank" title="WhatsApp">
-      <i class="fab fa-whatsapp"></i> Whatsapp
-    </a>
-  </div>
-  </section>
-
-  <!-- Image Slider (Moved Below Services Section) -->
-  <div class="slider-container">
-    <div class="slider">
-      <img src="https://img.freepik.com/free-photo/female-hairdresser-using-hairbrush-hair-dryer_329181-1929.jpg"
-        alt="Hair Styling">
-      <img src="https://img.freepik.com/free-photo/barber-rsquo-s-hairstyling-women-rsquo-s-salon-jobs-career-campaign_53876-127192.jpg"
-        alt="Makeup Application">
-      <img src="https://img.freepik.com/free-photo/curly-artist-looking-applying-her-blush-with-paintbrush_114579-26682.jpg"
-        alt="Bridal Makeup">
-    </div>
-    <div class="dots">
-      <span class="dot active" onclick="moveSlide(0)"></span>
-      <span class="dot" onclick="moveSlide(1)"></span>
-      <span class="dot" onclick="moveSlide(2)"></span>
-    </div>
-  </div>
-
-  
-
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelector('.slider');
-    const dots = document.querySelectorAll('.dot');
-    const totalSlides = dots.length;
-
-    function moveSlide(index) {
-      slideIndex = index;
-      updateSlider();
-    }
-
-    function updateSlider() {
-      slides.style.transform = `translateX(${-slideIndex * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[slideIndex % totalSlides].classList.add('active');
-    }
-
-    function autoSlide() {
-      slideIndex = (slideIndex + 1) % totalSlides;
-      updateSlider();
-    }
-
-    setInterval(autoSlide, 3000);
-  </script>
-</body>
-
-</html>
